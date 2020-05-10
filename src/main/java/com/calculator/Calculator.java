@@ -9,7 +9,6 @@ public class Calculator{
 		System.out.println("7 * 7 = " + multiply(7,7));
 	}
 	
-
 	public static int add(int a, int b){
 		return a + b;
 	}
