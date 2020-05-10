@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Git Repo') {
             steps {
-                git 'https://github.com/puneet7/MavenDemo.git'
+                git 'https://github.com/puneet7/DevopsPipelineDemo.git'
             }
         }
         stage('Maven Clean') { 
