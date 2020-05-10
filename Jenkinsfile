@@ -6,29 +6,29 @@ pipeline {
     }
     agent any 
     stages {
-        stage('Cloning our Git') {
+        stage('Clone Git Repo') {
             steps {
                 git 'https://github.com/puneet7/MavenDemo.git'
             }
         }
-        stage('clean') { 
+        stage('Maven Clean') { 
             steps {
                 sh "mvn clean"
             }
         }
-        stage('package') { 
+        stage('Build a JAR with Maven') { 
             steps {
                 sh "mvn package"
             }
         }
-        stage('build image') {
+        stage('Create a Docker Image') {
       	    steps {
         	    script {
           			dockerImage = docker.build registry + ":latest"
         		}
       		}
     	}
-    	stage('publish Image') {
+    	stage('Push Docker Image') {
       		steps {
         		script {
           			docker.withRegistry( '', registryCredential ) {
@@ -37,7 +37,7 @@ pipeline {
         		}
       		}
     	}
-    	stage('Cleaning up') {
+    	stage('Remove docker image from local memory') {
             steps{
                 sh "docker rmi $registry:latest"
             }
