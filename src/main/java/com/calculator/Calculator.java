@@ -1,6 +1,6 @@
 package com.calculator;
 
-public class Calculator {
+public class Calculator{
 
 	public static void main(String[] args){
 		System.out.println("7 + 7 = " + add(7, 7));
@@ -10,23 +10,23 @@ public class Calculator {
 	}
 	
 	
-	public static int add(int a, int b) {
+	public static int add(int a, int b){
 		return a + b;
 	}
 	
-	public static int subtract(int a, int b) {
+	public static int subtract(int a, int b){
 		return a - b;
 	}
 
-	public static long multiply(int a, int b) {
+	public static long multiply(int a, int b){
 		return a * b;
 	}
 
-	public static double divide(int a, int b) {
+	public static double divide(int a, int b){
 		double result;
-		if (b == 0) {
+		if (b == 0){
 			throw new IllegalArgumentException("Divisor cannot divide by zero");
-		} else {
+		}else{
 			result = Double.valueOf(a)/Double.valueOf(b);
 		}
 		return result;
